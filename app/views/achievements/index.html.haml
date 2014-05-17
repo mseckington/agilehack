@@ -4,11 +4,14 @@
 .achievements
   %ul.list
     - @achievements.each do |achievement|
-      .achievement
+      .achievement{class: ("gray" unless current_user.achieved?(achievement))}
         =image_tag achievement.icon
         %div.text
           %h3
             = achievement.name
           %p
             = simple_format achievement.description
-          STATUS: LOCKED
+          - if current_user.achieved?(achievement)
+            STATUS: ACHIEVEMENT UNLOCKED
+          -else
+            STATUS: LOCKED

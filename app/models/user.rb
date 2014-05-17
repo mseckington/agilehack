@@ -5,11 +5,17 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
+  has_many :user_achievements
+
   class << self
     def authenticate(email, password)
       user = User.find_by_email(email)
       return nil unless user
       user.authenticate(password) ? user : nil
     end
+  end
+
+  def achieved?(achievement)
+    UserAchievement.user_achieved?(self, achievement)
   end
 end
