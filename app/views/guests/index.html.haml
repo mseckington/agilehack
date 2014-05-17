@@ -1,9 +1,9 @@
 %h2 Guests
 
+#chart.embed-container
+  = render_chart(@chart, 'chart')
+
 %ul.list
   - @guests.each do |guest|
     %p
       = "#{guest.first_name} #{guest.last_name}, #{guest.location}"
-
-#chart
-  = render_chart(@chart, 'chart')
