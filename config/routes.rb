@@ -9,4 +9,5 @@ Agilehack::Application.routes.draw do
   delete '/sign-in', :to => 'sessions#destroy'
 
   resources :guests, only: [:index]
+  resources :achievements, only: [:index]
 end

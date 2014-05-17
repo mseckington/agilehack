@@ -1,0 +1,14 @@
+
+%h2 Achievements
+
+.achievements
+  %ul.list
+    - @achievements.each do |achievement|
+      .achievement
+        =image_tag achievement.icon
+        %div
+          %h2
+            = achievement.name
+          %p
+            = simple_format achievement.description
+          STATUS: LOCKED
