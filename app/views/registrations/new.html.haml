@@ -20,5 +20,9 @@
       = f.label :password_confirmation, 'Password confirmation*'
       = f.password_field :password_confirmation, value: @user.password_confirmation
       = error_message_for(@user, :password_confirmation)
+    = control_group_for(@user, :location) do
+      = f.label :location, 'Location'
+      = f.text_field :location
+      = error_message_for(@user, :location)
 
     = button_tag "Register", class: 'btn btn--small'

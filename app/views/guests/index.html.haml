@@ -3,5 +3,7 @@
 %ul.list
   - @guests.each do |guest|
     %p
-      = guest.first_name
-      = guest.last_name
+      = "#{guest.first_name} #{guest.last_name}, #{guest.location}"
+
+#chart
+  = render_chart(@chart, 'chart')

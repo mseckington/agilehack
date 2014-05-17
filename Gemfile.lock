@@ -39,6 +39,7 @@ GEM
     coffee-script-source (1.7.0)
     erubis (2.7.0)
     execjs (2.0.2)
+    google_visualr (2.1.9)
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -122,6 +123,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby (~> 3.1.0)
   coffee-rails (~> 4.0.0)
+  google_visualr (~> 2.1.0)
   haml
   haml-rails
   jbuilder (~> 1.2)
