@@ -5,6 +5,16 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def block_unauthenticated_users
+    unless current_user
+      if request.xhr?
+        render json: {}, status: :unauthorized
+      else
+        redirect_to sign_in_path, alert: "Please sign in"
+      end
+    end
+  end
+
   def signed_in?
     current_user.present?
   end
