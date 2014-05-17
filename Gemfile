@@ -14,7 +14,6 @@ gem 'bcrypt-ruby', '~> 3.1.0'
 gem 'valid_email', :require => 'valid_email/email_validator'
 
 gem 'jquery-rails'
-gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem "google_visualr", "~> 2.1.0"
