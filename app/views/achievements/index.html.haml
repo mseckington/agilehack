@@ -6,8 +6,8 @@
     - @achievements.each do |achievement|
       .achievement
         =image_tag achievement.icon
-        %div
-          %h2
+        %div.text
+          %h3
             = achievement.name
           %p
             = simple_format achievement.description
