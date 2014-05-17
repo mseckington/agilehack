@@ -26,8 +26,18 @@ class GuestsController < ApplicationController
     @chart = GoogleVisualr::Interactive::GeoChart.new(data_table, opts)
   end
 
+  def guest_list
+    @guests = User.all
+    render json: @guests
+  end
+
   def show
     @guest = User.find(params[:guest_id])
-    render json: @guest
+    render json: @guest, root: :guest
+  end
+
+  def achievements
+    @achievements = User.find(params[:guest_id]).achievements
+    render json: @achievements, root: :achievements
   end
 end

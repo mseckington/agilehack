@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_secure_password
 
   has_many :user_achievements
+  has_many :achievements, through: :user_achievements
 
   class << self
     def authenticate(email, password)
