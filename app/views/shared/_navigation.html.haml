@@ -1,6 +1,6 @@
 .header-wrapper
   .header-nav
-    %ul.nav.nav--global
+    %ul.nav
       %li
         - if signed_in?
           = "Signed in as #{current_user.first_name}"
@@ -14,12 +14,13 @@
     %div.header-date 15-05-15
     =link_to 'MR & MRS GEEKY', '/'
 
-.header-site-nav
-  %ul.nav.nav--global
-    %li
-      = link_to 'Wedding', '/'
-    %li
-      = link_to 'Guests', guests_path
-    %li
-      = link_to 'Achievements', achievements_path
+- if signed_in?
+  .header-site-nav
+    %ul.nav.nav--global
+      %li
+        = link_to 'Wedding', '/', class: (current_page?('/') ? "current" : "")
+      %li
+        = link_to 'Guests', guests_path, class: (current_page?(guests_path) ? "current" : "")
+      %li
+        = link_to 'Achievements', achievements_path, class: (current_page?(achievements_path) ? "current" : "")
 
