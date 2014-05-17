@@ -1,4 +1,4 @@
-form {
+.register_form {
   .controlgroup {
     margin-bottom: 20px;
 
@@ -9,7 +9,7 @@ form {
 
     input {
       line-height: 23px;
-      width: 300px;
+      width: 270px;
     }
   }
 
@@ -23,8 +23,8 @@ form {
 }
 
 @media screen and (max-width: 800px) {
-  form {
-    font-size: 13px;
+  .register_form {
+    font-size: 11px;
 
     .btn--small {
       margin-left: 0;

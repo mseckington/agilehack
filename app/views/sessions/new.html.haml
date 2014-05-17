@@ -1,10 +1,11 @@
-= form_tag(session_path) do
-  .controlgroup
-    = label_tag :email, 'Email*'
-    = email_field_tag :email, params[:email]
-  .controlgroup
-    = label_tag :password, 'Password*'
-    = password_field_tag :password, params[:password]
+.register_form
+  = form_tag(session_path) do
+    .controlgroup
+      = label_tag :email, 'Email*'
+      = email_field_tag :email, params[:email]
+    .controlgroup
+      = label_tag :password, 'Password*'
+      = password_field_tag :password, params[:password]
 
-  = button_tag "Sign in", class: 'btn btn--small'
-  = link_to "Register here", register_path, class: 'register'
+    = button_tag "Sign in", class: 'btn btn--small'
+    = link_to "Register here", register_path, class: 'register'

@@ -1,6 +1,7 @@
 .global-header {
-  // border-bottom: 1px solid lighten($text-color, 40%);
-  margin-bottom: 10px;
+  border-bottom: 1px solid lighten($text-color, 40%);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .header-wrapper {
@@ -54,15 +55,15 @@
 
 @media screen and (max-width: 600px) {
   .header-save {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .header-date {
-    font-size: 36px;
+    font-size: 33px;
   }
 
   .header-title {
-    font-size: 20px;
+    font-size: 19px;
   }
 
   .header-nav {
