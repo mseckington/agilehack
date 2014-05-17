@@ -1,0 +1,7 @@
+%h2 Guests
+
+%ul.list
+  - @guests.each do |guest|
+    %p
+      = guest.first_name
+      = guest.last_name

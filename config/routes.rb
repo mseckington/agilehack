@@ -7,4 +7,6 @@ Agilehack::Application.routes.draw do
   get '/sign-in', :to => 'sessions#new', :as => 'sign_in'
   post '/sign-in', :to => 'sessions#create', :as => 'session'
   delete '/sign-in', :to => 'sessions#destroy'
+
+  resources :guests, only: [:index]
 end
