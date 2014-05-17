@@ -1,5 +1,5 @@
 class GuestsController < ApplicationController
-  before_filter :block_unauthenticated_users
+  before_filter :block_unauthenticated_users, except: [:show]
 
   def index
     @guests = User.all
@@ -24,5 +24,10 @@ class GuestsController < ApplicationController
       colorAxis: {colors: ['#fff', '#000']}
     }
     @chart = GoogleVisualr::Interactive::GeoChart.new(data_table, opts)
+  end
+
+  def show
+    @guest = User.find(params[:guest_id])
+    render json: @guest
   end
 end

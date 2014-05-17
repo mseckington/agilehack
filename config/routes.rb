@@ -10,4 +10,10 @@ Agilehack::Application.routes.draw do
 
   resources :guests, only: [:index]
   resources :achievements, only: [:index]
+
+  scope "/api/v1" do
+    scope "/guests" do
+      get ":guest_id" => "guests#show"
+    end
+  end
 end
