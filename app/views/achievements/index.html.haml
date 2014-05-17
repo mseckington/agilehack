@@ -4,7 +4,7 @@
 .achievements
   %ul.list
     - @achievements.each do |achievement|
-      .achievement{class: ("gray" unless current_user.achieved?(achievement))}
+      .achievement{class: ("gray" unless current_user.achieved?(achievement)), id: "achievement_#{achievement.id}"}
         =image_tag achievement.icon
         %div.text
           %h3
@@ -12,6 +12,9 @@
           %p
             = simple_format achievement.description
           - if current_user.achieved?(achievement)
-            STATUS: ACHIEVEMENT UNLOCKED
+            .status STATUS: ACHIEVEMENT UNLOCKED
           -else
-            STATUS: LOCKED
+            .status
+              STATUS: LOCKED
+              = link_to "Unlock", user_achievements_path(achievement_id: achievement.id), remote: true, method: 'POST', class: 'btn btn--small'
+
